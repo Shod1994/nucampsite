@@ -22,7 +22,7 @@
                 <h2>a better way to camp</h2>             
             </div>
             <div class="col col-md-4 col-lg-2 d-flex justify-content-end align-items-center">
-                <a class="text-nowrap" href="#reserveForm"><button class="btn btn-info text-white">Reserve Campsite</button></a>
+                <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#reserveModal">Reserve Campsite</button>
             </div>     
         </div>
     </div>
@@ -91,6 +91,50 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="reserveModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header bg-info text-white">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Reserve a Campsite</h1>
+              <button type="button" class="btn-close"  data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form action="https://us-central1-nucamp-production.cloudfunctions.net/post/formdata" id="reserveForm" method="post"></form>
+                    <div class="row mb-3">
+                        <label for="Campers" class=" col-sm-6 col-form-label">Number Of Campers</label>
+                        <div class="col-12 col-sm-6">
+                            <select name="Campers" class="form-control" id="Campers">
+                                <option value="" selected disabled>...Select</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="Date" class="col-sm-6 col-form-label">Date</label>
+                        <div class="col-12 col-sm-6">
+                            <input type="date" class="form-control" id="date" name="date">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-12 col-sm-12">
+                            <button type="cancel" class="btn btn-dark">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <main class="container">
 
         <!-- discover section -->
